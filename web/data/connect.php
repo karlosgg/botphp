@@ -6,6 +6,7 @@
    } else {
       echo "Opened database successfully\n";
    }
+   $ret=pg_query($db,"TRUNCATE TABLE Clientes");
 
    /*$sql =<<<EOF
    	CREATE TABLE Clientes (
@@ -21,5 +22,5 @@ EOF;
    } else {
       echo "Table created successfully\n";
    }*/
-   //pg_close($db);
+   pg_close($db);
 ?>
