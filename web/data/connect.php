@@ -8,10 +8,10 @@
    }
 
    $sql =<<<EOF
-   	CREATE TABLE Clientes (
-    IdCliente   serial CONSTRAINT firstkey PRIMARY KEY,
-    Nombre      varchar(200),
-    Chat        varchar(100)
+   	CREATE TABLE Compras (
+    IdCompra   serial PRIMARY KEY,
+    Total     double,
+    IdCliente  integer
 	);
 EOF;
 
