@@ -29,7 +29,7 @@
 		/*while ($row = pg_fetch_row($result)) {
 			  $text.= "IdCliente: $row[0]  Nomre: $row[1]";
 			}*/
-	  $text = "El cliente no esta registrado.";
+	  $text = $result;
 
 	}else{
 		$text = "El cliente ya esta registrado.";
