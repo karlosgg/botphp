@@ -23,7 +23,7 @@
 	  exit;
 	}
 	
-	$result = pg_query($db, "SELECT * FROM Clientes WHERE Chat='".$chatId."'");
+	$result = pg_query($db, "SELECT * FROM Clientes WHERE Chat=".$chatId.";");
 	if (!$result) {
 		
 		/*while ($row = pg_fetch_row($result)) {
@@ -32,8 +32,7 @@
 	  $text = "El cliente no esta registrado.";
 
 	}else{
-		$text=$chatId;
-		$text. = "El cliente ya esta registrado.";
+		$text="El cliente ya esta registrado.";
 	}
 	pg_close($db);
 
