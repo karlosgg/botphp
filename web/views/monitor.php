@@ -19,7 +19,10 @@
 	enviaMensaje($chatId, $text);
 
 	function enviaMensaje($chatId, $mensaje){
-		$urlM=$GLOBALS(web)."/sendMessage?chat_id=".$chatId."&text=".urldecode($mensaje);
+		if($mensaje=="hola"){
+			$mensaje="Bienvenid@";
+		}
+		$urlM=$GLOBALS(web)."/sendmessage?chat_id=".$chatId."&text=".urldecode($mensaje);
 		file_get_contents($urlM);
 	}
 	//print_r($updateArray);
