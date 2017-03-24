@@ -12,7 +12,7 @@
 	$updateArray = json_decode($update, true);
 
 	$text = $updateArray["message"]["text"];
-	$chatId=$updateArray["message"]["chat"]["id"];
+	$chatId=$updateArray["message"]["from"]["id"];
 
 	print_r($chatId);
 
@@ -22,7 +22,8 @@
 		if($mensaje=="hola"){
 			$mensaje="Bienvenid@";
 		}
-		$urlM=$GLOBALS(web)."/sendmessage?chat_id=".$chatId."&text=".urldecode($mensaje);
+		$urlM="https://api.telegram.org/bot276122011:AAFj_3j1_VeVsyKNzyYQYyYcV9lqqg9prto/sendmessage?chat_id=".$chatId."&text=".urldecode($mensaje);
+		
 		file_get_contents($urlM);
 	}
 	//print_r($updateArray);
