@@ -1,6 +1,7 @@
 <?php
 
-require('../vendor/autoload.php');
+require('view/monitor.php');
+/*require('../vendor/autoload.php');
 
 $app = new Silex\Application();
 $app['debug'] = true;
@@ -30,3 +31,6 @@ $app->get('/bot', function() use($app) {
 });
 
 $app->run();
+*/
+
+?>
