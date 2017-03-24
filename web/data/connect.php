@@ -7,11 +7,11 @@
       echo "Opened database successfully\n";
    }
 
-   $sql =<<<EOF
-   	CREATE TABLE Compras (
-    IdCompra   serial PRIMARY KEY,
-    Total     double precision,
-    IdCliente  integer
+   /*$sql =<<<EOF
+   	CREATE TABLE Clientes (
+    IdCliente   serial CONSTRAINT firstkey PRIMARY KEY,
+    Nombre      varchar(200),
+    Chat        varchar(100)
 	);
 EOF;
 
@@ -20,6 +20,6 @@ EOF;
       echo pg_last_error($db);
    } else {
       echo "Table created successfully\n";
-   }
-   pg_close($db);
+   }*/
+   //pg_close($db);
 ?>

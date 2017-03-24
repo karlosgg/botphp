@@ -1,0 +1,11 @@
+	CREATE TABLE Compras (
+    IdCompra   serial PRIMARY KEY,
+    Total     double precision,
+    IdCliente  integer
+	);
+
+	CREATE TABLE Clientes (
+    IdCliente   serial CONSTRAINT firstkey PRIMARY KEY,
+    Nombre      varchar(200),
+    Chat        varchar(100)
+	);

@@ -16,8 +16,23 @@
 
 	print_r($chatId);
 
-	enviaMensaje($chatId, $text);
+	
+	require('../data/connect.php');
+	if (!$db) {
+	  $text = "Error al conectar.";
+	  exit;
+	}
+	
+	$result = pg_query($db, "SELECT * FROM Clientes WHERE Chat='".$chatId."'");
+	if (!$result) {
+	  $text = "El cliente no esta registrado.";
 
+	}else{
+		$text = "El cliente ya esta registrado.";
+	}
+	pg_close($db);
+
+	enviaMensaje($chatId, $text);
 	function enviaMensaje($chatId, $mensaje){
 		if($mensaje=="hola"){
 			$mensaje="Bienvenid@";
