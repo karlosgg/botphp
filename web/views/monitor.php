@@ -19,12 +19,12 @@
 	enviaMensaje($chatId, $text);
 
 	function enviaMensaje($chatId, $mensaje){
-		$urlM=$GLOBALS[website]."/sendMessage?chat_id=".$chatId."&text=".urldecode($mensaje);
+		$urlM=$url."/sendMessage?chat_id=".$chatId."&text=".urldecode($mensaje);
 		file_get_contents($urlM);
 	}
 	//print_r($updateArray);
 //print_r($updateArray);
-	/*$valor=array();
+	$valor=array();
 	foreach($updateArray["result"] as $valor) {
 	
 		echo "Actualizacion: ";
@@ -50,6 +50,6 @@
 		print "<br><br>";
 	}
 
-	*/
+	
 ?>
 
