@@ -22,7 +22,7 @@
 		if($mensaje=="hola"){
 			$mensaje="Bienvenid@";
 		}
-		$urlM=$web."/sendmessage?chat_id=".$chatId."&text=".urldecode($mensaje);
+		$urlM=$GLOBALS('web')."/sendmessage?chat_id=".$chatId."&text=".urldecode($mensaje);
 
 		file_get_contents($urlM);
 	}
