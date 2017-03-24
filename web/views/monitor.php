@@ -13,6 +13,7 @@
 
 	$text = $updateArray["message"]["text"];
 	$chatId=$updateArray["message"]["from"]["id"];
+	$nombre=$updateArray["message"]["from"]["first_name"]." ".$updateArray["message"]["from"]["last_name"];
 
 	print_r($chatId);
 
@@ -26,10 +27,8 @@
 	$result = pg_query($db, "SELECT * FROM Clientes WHERE Chat=".$chatId.";");
 	if (!$result) {
 		
-		/*while ($row = pg_fetch_row($result)) {
-			  $text.= "IdCliente: $row[0]  Nomre: $row[1]";
-			}*/
-	  $text = "El cliente no esta registrado.";
+	pg_query($db, "INSERT INTO Clientes (Nombre, Chat) VALUES ('".$nombre."','".$chatId."')");
+	  $text = "El cliente no esta registrado.\n El cliente ".$nombre." se ha registrado satisfactoriamente.";
 
 	}else{
 		$text="El cliente ya esta registrado.";
