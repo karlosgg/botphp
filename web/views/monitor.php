@@ -22,8 +22,8 @@
 		if($mensaje=="hola"){
 			$mensaje="Bienvenid@";
 		}
-		$urlM="https://api.telegram.org/bot276122011:AAFj_3j1_VeVsyKNzyYQYyYcV9lqqg9prto/sendmessage?chat_id=".$chatId."&text=".urldecode($mensaje);
-		
+		$urlM=$web."/sendmessage?chat_id=".$chatId."&text=".urldecode($mensaje);
+
 		file_get_contents($urlM);
 	}
 	//print_r($updateArray);
