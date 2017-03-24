@@ -1,6 +1,6 @@
 <?php
-
-require('view/monitor.php');
+echo "lalala";
+//require('view/monitor.php');
 /*require('../vendor/autoload.php');
 
 $app = new Silex\Application();
