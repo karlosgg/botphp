@@ -10,7 +10,7 @@
    $sql =<<<EOF
    	CREATE TABLE Compras (
     IdCompra   serial PRIMARY KEY,
-    Total     double,
+    Total     double precision,
     IdCliente  integer
 	);
 EOF;
