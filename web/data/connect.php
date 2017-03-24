@@ -6,6 +6,21 @@
    } else {
       echo "Opened database successfully\n";
    }
+
+    $sql ="SELECT * FROM Clientes";
+
+   $ret = pg_query($db, $sql);
+   if(!$ret){
+      echo pg_last_error($db);
+      exit;
+   } 
+   while($row = pg_fetch_row($ret)){
+      echo "ID = ". $row[0] . "\n";
+      echo "Nombre = ". $row[1] ."\n";
+      echo "Chat = ". $row[2] ."\n";
+   }
+   echo "Operation done successfully\n";
+   pg_close($db);
    //$ret=pg_query($db,"TRUNCATE TABLE Clientes");
 
    /*$sql =<<<EOF
