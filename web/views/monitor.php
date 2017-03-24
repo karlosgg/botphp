@@ -5,14 +5,26 @@
 	$botToken = "276122011:AAFj_3j1_VeVsyKNzyYQYyYcV9lqqg9prto";
 	$url = "https://api.telegram.org/bot" . $botToken;
 
-	$update = file_get_contents($url.'/getupdates');
+	//$update = file_get_contents($url.'/getupdates');
+	$update = file_get_contents("php://input");
 
-	$updateArray=array();
+	//$updateArray=array();
 	$updateArray = json_decode($update, true);
 
+	$text = $updateArray["message"]["text"];
+	$chatId=$updateArray["message"]["chat"]["id"];
+
+	print_r($chatId);
+
+	enviaMensaje($chatId, $text);
+
+	function enviaMensaje($chatId, $mensaje){
+		$urlM=$GLOBALS[website]."/sendMessage?chat_id=".$chatId."&text=".urldecode($mensaje);
+		file_get_contents($urlM);
+	}
 	//print_r($updateArray);
 //print_r($updateArray);
-	$valor=array();
+	/*$valor=array();
 	foreach($updateArray["result"] as $valor) {
 	
 		echo "Actualizacion: ";
@@ -38,6 +50,6 @@
 		print "<br><br>";
 	}
 
-	
+	*/
 ?>
 
