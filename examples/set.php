@@ -2,9 +2,9 @@
 // Load composer
 require __DIR__ . '/vendor/autoload.php';
 
-$API_KEY = 'your_bot_api_key';
-$BOT_NAME = 'username_bot';
-$hook_url = 'https://yourdomain/path/to/hook.php';
+$API_KEY = 'bot276122011:AAFj_3j1_VeVsyKNzyYQYyYcV9lqqg9prto';
+$BOT_NAME = 'TlMovilAppBot';
+$hook_url = 'https://jcggphp.herokuapp.com/';
 try {
     // Create Telegram API object
     $telegram = new Longman\TelegramBot\Telegram($API_KEY, $BOT_NAME);
@@ -13,7 +13,7 @@ try {
     $result = $telegram->setWebhook($hook_url);
 
     // Uncomment to use certificate
-    //$result = $telegram->setWebhook($hook_url, ['certificate' => $path_certificate]);
+    $result = $telegram->setWebhook($hook_url, ['certificate' => 'cert.pem']);
 
     if ($result->isOk()) {
         echo $result->getDescription();

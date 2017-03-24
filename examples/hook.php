@@ -12,8 +12,8 @@
 require __DIR__ . '/vendor/autoload.php';
 
 // Add you bot's API key and name
-$API_KEY = 'your_bot_api_key';
-$BOT_NAME = 'username_bot';
+$API_KEY = 'bot276122011:AAFj_3j1_VeVsyKNzyYQYyYcV9lqqg9prto';
+$BOT_NAME = 'TlMovilAppBot';
 
 // Define a path for your custom commands
 //$commands_path = __DIR__ . '/Commands/';
