@@ -26,7 +26,7 @@ $app->get('/', function() use($app) {
 
 $app->get('/bot', function() use($app) {
   $app['monolog']->addDebug('logging output.');
-  return 'monitor.php';
+  return (include('monitor.php'));
 });
 
 $app->run();
