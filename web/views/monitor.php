@@ -24,14 +24,14 @@
 	  exit;
 	}
 	
-	$result = pg_query($db, "SELECT * FROM Clientes WHERE Chat='".$chatId."'");
+	$result = pg_query($db, "SELECT * FROM Clientes WHERE Chat=".(string)$chatId.";");
 	if (!$result) {
 		
 	pg_query($db, "INSERT INTO Clientes (Nombre, Chat) VALUES ('".$nombre."','".$chatId."')");
 	  $text = "El cliente no esta registrado.\n El cliente ".$nombre." se ha registrado satisfactoriamente.";
 
 	}else{
-		$text="El cliente ya esta registrado. ".$chatId;
+		$text="El cliente ya esta registrado. ";
 	}
 	pg_close($db);
 
