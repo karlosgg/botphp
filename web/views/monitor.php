@@ -31,7 +31,7 @@
 	  $text = "El cliente no esta registrado.\n El cliente ".$nombre." se ha registrado satisfactoriamente.";
 
 	}else{
-		$text="El cliente ya esta registrado.";
+		$text="El cliente ya esta registrado. ".pg_query($db, "SELECT count(*) FROM Clientes WHERE Chat='".$chatId."'");
 	}
 	pg_close($db);
 
