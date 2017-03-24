@@ -32,8 +32,8 @@
 	  $text = "El cliente no esta registrado.";
 
 	}else{
-		$text=$result;
-		//$text = "El cliente ya esta registrado.";
+		$text=$chatId;
+		$text. = "El cliente ya esta registrado.";
 	}
 	pg_close($db);
 
