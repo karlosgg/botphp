@@ -26,7 +26,7 @@ $app->get('/', function() use($app) {
 
 $app->get('/bot', function() use($app) {
   $app['monolog']->addDebug('logging output.');
-  return $app['twig']->render('monitor.php');
+  return 'monitor.php';
 });
 
 $app->run();
