@@ -8,7 +8,7 @@
    }
 
    $id="350172762";
-    $sql ="SELECT * FROM Clientes WHERE Chat=".$id;
+    $sql ="SELECT * FROM Clientes WHERE Chat=\"".$id."\"";
 
    $ret = pg_query($db, $sql);
    if(!$ret){
