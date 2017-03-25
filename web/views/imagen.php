@@ -1,13 +1,13 @@
 
 <?php
 
-header("Content-type: image/png");
-$cadena = $_GET['texto'];
-$im     = imagecreatefrompng("boton1.png");
-$naranja = imagecolorallocate($im, 220, 210, 60);
-$px     = (imagesx($im) - 7.5 * strlen($cadena)) / 2;
-imagestring($im, 3, $px, 9, $cadena, $naranja);
+header("Content-Type: image/png");
+$im = @imagecreate(160, 30);
+$color_fondo = imagecolorallocate($im, 0, 153, 255);
+$color_texto = imagecolorallocate($im, 255, 255, 255);
+imagestring($im, 10, 5, 5, "info@norfipc.com", $color_texto);
 imagepng($im);
 imagedestroy($im);
-
 ?>
+
+
