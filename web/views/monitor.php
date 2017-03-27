@@ -24,12 +24,12 @@
 	  exit;
 	}
 	
-	$result = pg_query($db, "SELECT Nombre, Chat FROM Clientes WHERE Chat=".$chatId.";");
+	$result = pg_query($db, "SELECT * FROM Clientes WHERE Chat=".$chatId."");
 	if (!$result) {
 		
-	pg_query($db, "INSERT INTO Clientes (Nombre, Chat) VALUES ('".$nombre."','".$chatId."')");
+	//pg_query($db, "INSERT INTO Clientes (Nombre, Chat) VALUES ('".$nombre."','".$chatId."')");
 	while($row=pg_fetch_assoc($result)){
-		$text=  $row['Nombre'];
+		$text=  $row[0];
 	}
 
 	 // $text = "El cliente no esta registrado.\n El cliente ".$nombre." se ha registrado satisfactoriamente.";
