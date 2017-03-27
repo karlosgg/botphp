@@ -44,7 +44,7 @@
 	}
 	pg_close($db);
 */
-	$text="Mensaje recibido. Id: "+$chatId;
+	$text="Mensaje recibido. Id: ".$chatId;
 	enviaMensaje($chatId, $text);
 	function enviaMensaje($chatId, $mensaje){
 		if($mensaje=="hola"){
@@ -54,7 +54,7 @@
 
 		file_get_contents($urlM);
 	}
-	
+
 	//print_r($updateArray);
 //print_r($updateArray);
 	/*$valor=array();
