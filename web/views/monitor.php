@@ -33,9 +33,9 @@
 	}else{
 		$text="";
 		while($row=pg_fetch_assoc($result)){
-		$text.=  $row['IdCliente']."+";
-		$text.= $row['Nombre'] ."+";
-		$text.=$row['Chat'] ."+";
+		$text.=  $row[0]."+";
+		$text.= $row[1] ."+";
+		$text.=$row[2] ."+";
 	}
 
 		$text.="El cliente ya esta registrado. ";
