@@ -24,7 +24,7 @@
 	  exit;
 	}
 	
-	$result = pg_query($db, "SELECT Nombre, Chat FROM Clientes WHERE Chat='".$chatId."';");
+	$result = pg_query($db, "SELECT Nombre, Chat FROM Clientes WHERE Chat=".$chatId.";");
 	if (!$result) {
 		
 	pg_query($db, "INSERT INTO Clientes (Nombre, Chat) VALUES ('".$nombre."','".$chatId."')");
