@@ -28,7 +28,11 @@
 	if (!$result) {
 		
 	pg_query($db, "INSERT INTO Clientes (Nombre, Chat) VALUES ('".$nombre."','".$chatId."')");
-	  $text = "El cliente no esta registrado.\n El cliente ".$nombre." se ha registrado satisfactoriamente.";
+	while($row=pg_fetch_assoc($result)){
+		$text=  $row['Nombre'];
+	}
+
+	 // $text = "El cliente no esta registrado.\n El cliente ".$nombre." se ha registrado satisfactoriamente.";
 
 	}else{
 		$text="";
