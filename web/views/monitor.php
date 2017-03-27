@@ -18,7 +18,7 @@
 	print_r($chatId);
 
 	
-	require('../data/connect.php');
+	/*require('../data/connect.php');
 	if (!$db) {
 	  $text = "Error al conectar.";
 	  exit;
@@ -43,7 +43,8 @@
 		$text.="El cliente ya esta registrado. ".$chatId;
 	}
 	pg_close($db);
-
+*/
+	$text="Mensaje recibido. Id: "+$chatId;
 	enviaMensaje($chatId, $text);
 	function enviaMensaje($chatId, $mensaje){
 		if($mensaje=="hola"){
@@ -53,6 +54,7 @@
 
 		file_get_contents($urlM);
 	}
+	
 	//print_r($updateArray);
 //print_r($updateArray);
 	/*$valor=array();
