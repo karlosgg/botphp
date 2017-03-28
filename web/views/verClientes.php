@@ -23,9 +23,8 @@ require('../data/connect.php');
 	
 	$result = pg_query($db, "SELECT * FROM Clientes");
 	if ($result) {
-		$res=0;
 		while($row=pg_fetch_assoc($result)){
-			echo $row['IdCliente']." - ".$row['Nombre']." ".$row['Chat'];
+			echo $row[0]." - ".$row[1]." ".$row[2];
 		}
 
 	}else{
