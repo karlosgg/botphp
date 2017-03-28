@@ -21,10 +21,10 @@ require('../data/connect.php');
 
 	}
 	
-	$result = pg_query($db, "SELECT * FROM Clientes");
+	$r= pg_query($db, "SELECT IdCliente as id, Nombre as nom, Chat as cid FROM Clientes");
 	if ($result) {
-		while($row=pg_fetch_assoc($result)){
-			echo $row[0];
+		while($row=pg_fetch_assoc($r)){
+			echo $row['id']." - ".$row['nom']." ".$row['cid'];
 		}
 
 	}else{
