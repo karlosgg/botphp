@@ -5,7 +5,7 @@ $url = "https://api.telegram.org/bot" . $botToken;
 
 ?>
 <html>
-<head></head>
+<head><title>Realizar Facturacion</title></head>
 <body>
 	<form action="<?php echo $url.'/sendPhoto' ?>" method="post" enctype="multipart/form-data">
 		<input type="text" name="chat_id" value="350172762" />

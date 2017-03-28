@@ -32,14 +32,9 @@
 		while($row=pg_fetch_assoc($result)){
 			$res=  $row['nom'];
 		}
-		pg_close($db);
-		require('../data/connect.php');
-	if (!$db) {
-	  $text = "Error al conectar.";
-	  exit;
-	}
+
 		if($res==0){
-			pg_query($db, "INSERT INTO Clientes (Nombre,Chat) VALUES ( '".$nombre."','".$chatId."'");
+			pg_query($db, "INSERT INTO Clientes (Nombre,Chat) VALUES ( ".$nombre.",".$chatId."");
 			 $text = "El cliente no esta registrado.\n El cliente ".$nombre." se ha registrado satisfactoriamente.";
 		}else{
 
