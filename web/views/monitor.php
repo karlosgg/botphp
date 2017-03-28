@@ -18,13 +18,13 @@
 	print_r($chatId);
 
 	
-	/*require('../data/connect.php');
+	require('../data/connect.php');
 	if (!$db) {
 	  $text = "Error al conectar.";
 	  exit;
 	}
 	
-	$result = pg_query($db, "SELECT * FROM Clientes WHERE Chat=".$chatId."");
+	$result = pg_query($db, "SELECT count(*) as num FROM Clientes WHERE Chat=".$chatId."");
 	if (!$result) {
 		
 	//pg_query($db, "INSERT INTO Clientes (Nombre, Chat) VALUES ('".$nombre."','".$chatId."')");
@@ -37,7 +37,7 @@
 	}else{
 		$text="";
 		while($row=pg_fetch_assoc($result)){
-		$text=  $row['Nombre'];
+		$text=  $row['num'];
 	}
 
 		$text.="El cliente ya esta registrado. ".$chatId;
