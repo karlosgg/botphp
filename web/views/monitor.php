@@ -25,22 +25,30 @@
 	}
 	
 	$result = pg_query($db, "SELECT count(*) as nom FROM Clientes WHERE Chat='".$chatId."'");
-	if (!$result) {
+	if ($result) {
 		
 		//pg_query($db, "INSERT INTO Clientes (Nombre, Chat) VALUES ('".$nombre."','".$chatId."')");
+		$res=0;
 		while($row=pg_fetch_assoc($result)){
-			$text=  $row[0];
+			$res=  $row['nom'];
 		}
 
-	 // $text = "El cliente no esta registrado.\n El cliente ".$nombre." se ha registrado satisfactoriamente.";
+		if($text==0){
+			$result = pg_query($db, "INSERT INTO Clientes (Nombre,Chat) VALUES ( '".$nombre."','".$chatId."'");
+			 $text = "El cliente no esta registrado.\n El cliente ".$nombre." se ha registrado satisfactoriamente.";
+		}else{
+
+			 $text = "El cliente ya esta registrado.";
+		}
+	 
 
 	}else{
-		$text="";
-		while($row=pg_fetch_assoc($result)){
-		$text.=  $row['nom'];
-		}
+		//$text="";
+		//while($row=pg_fetch_assoc($result)){
+		//$text.=  $row['nom'];
+		//}
 
-		$text.="El cliente ya esta registrado. ".$chatId;
+		$text.="Error";
 	}
 	pg_close($db);
 
