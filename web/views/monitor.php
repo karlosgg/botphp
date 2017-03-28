@@ -27,10 +27,10 @@
 	$result = pg_query($db, "SELECT count(*) as num FROM Clientes WHERE Chat='".$chatId."'");
 	if (!$result) {
 		
-	//pg_query($db, "INSERT INTO Clientes (Nombre, Chat) VALUES ('".$nombre."','".$chatId."')");
-	while($row=pg_fetch_assoc($result)){
-		$text=  $row[0];
-	}
+		//pg_query($db, "INSERT INTO Clientes (Nombre, Chat) VALUES ('".$nombre."','".$chatId."')");
+		while($row=pg_fetch_assoc($result)){
+			$text=  $row[0];
+		}
 
 	 // $text = "El cliente no esta registrado.\n El cliente ".$nombre." se ha registrado satisfactoriamente.";
 
@@ -38,12 +38,12 @@
 		$text="";
 		while($row=pg_fetch_assoc($result)){
 		$text=  $row['num'];
-	}
+		}
 
 		$text.="El cliente ya esta registrado. ".$chatId;
 	}
 	pg_close($db);
-*/
+
 	$text="Mensaje recibido. Id: ".$chatId;
 	enviaMensaje($chatId, $text);
 	function enviaMensaje($chatId, $mensaje){
