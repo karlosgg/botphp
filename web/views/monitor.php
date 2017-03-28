@@ -35,7 +35,7 @@
 		}
 
 		if($res==0){
-			pg_query($db, "INSERT INTO Clientes (\"Nombre\",\"Chat\") VALUES ( '".$nombre."','".$chatId."'");
+			pg_query($db, "INSERT INTO Clientes (Nombre, Chat) VALUES ('".$nombre."','".$chatId."');");
 			 $text = "El cliente no esta registrado.\n El cliente ".$nombre." se ha registrado satisfactoriamente.";
 		}else{
 
