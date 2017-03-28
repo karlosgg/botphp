@@ -33,7 +33,7 @@
 			$res=  $row['nom'];
 		}
 
-		if($text==0){
+		if($res==0){
 			$result = pg_query($db, "INSERT INTO Clientes (Nombre,Chat) VALUES ( '".$nombre."','".$chatId."'");
 			 $text = "El cliente no esta registrado.\n El cliente ".$nombre." se ha registrado satisfactoriamente.";
 		}else{

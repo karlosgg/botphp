@@ -6,7 +6,7 @@ require('../data/connect.php');
 	  exit;
 	}
 	
-	$result = pg_query($db, "SELECT *  FROM Clientes");
+	$result = pg_query($db, "SELECT * FROM Clientes");
 	if ($result) {
 		$res=0;
 		while($row=pg_fetch_assoc($result)){
