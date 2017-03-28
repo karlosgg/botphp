@@ -24,7 +24,7 @@ require('../data/connect.php');
 	$r= pg_query($db, "SELECT IdCliente as id, Nombre as nom, Chat as cid FROM Clientes");
 	if ($result) {
 		while($row=pg_fetch_assoc($r)){
-			echo '<br>'.$row['id']." - ".$row['nom']." ".$row['cid'].'<br><a href="https://jcggphp.herokuapp.com/views/compra?id='.$row['cid'].'>Enviar Adjunto</a>';
+			echo '<br>'.$row['id']." - ".$row['nom']." ".$row['cid'].'<br><a href="https://jcggphp.herokuapp.com/views/compra?id='.$row['cid'].'">Enviar Adjunto</a>';
 		}
 
 	}else{
