@@ -15,12 +15,13 @@
 	$chatId=$updateArray["message"]["from"]["id"];
 	$nombre=$updateArray["message"]["from"]["first_name"]." ".$updateArray["message"]["from"]["last_name"];
 
-	print_r($chatId);
+	//print_r($chatId);
 
 	
 	require('../data/connect.php');
 	if (!$db) {
 	  $text = "Error al conectar.";
+	  enviaMensaje($chatId, $text);
 	  exit;
 	}
 	
