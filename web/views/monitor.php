@@ -24,7 +24,7 @@
 	  exit;
 	}
 	
-	$result = pg_query($db, "SELECT Nombre as nom FROM Clientes WHERE Chat='".$chatId."'");
+	$result = pg_query($db, "SELECT count(*) as nom FROM Clientes WHERE Chat='".$chatId."'");
 	if (!$result) {
 		
 		//pg_query($db, "INSERT INTO Clientes (Nombre, Chat) VALUES ('".$nombre."','".$chatId."')");
