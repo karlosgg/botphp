@@ -1,6 +1,6 @@
 <?php
-	echo "<h1>MONITOR DE MI BOT</H1>";
-
+	echo "<h1>MONITOR DE APP</H1>";
+	echo '<a href="https://jcggphp.herokuapp.com/views/verClientes.php">Ver Clientes</a> ';
 
 	$botToken = "276122011:AAFj_3j1_VeVsyKNzyYQYyYcV9lqqg9prto";
 	$web = "https://api.telegram.org/bot" . $botToken;
