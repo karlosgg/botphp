@@ -24,7 +24,7 @@ require('../data/connect.php');
 	$result = pg_query($db, "SELECT * FROM Clientes");
 	if ($result) {
 		while($row=pg_fetch_assoc($result)){
-			echo $row[0]." - ".$row[1]." ".$row[2];
+			echo $row[0];
 		}
 
 	}else{
